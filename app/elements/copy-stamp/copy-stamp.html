@@ -1,0 +1,19 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="copy-stamp" attributes="">
+  <template>
+    <link rel="stylesheet" href="copy-stamp.css">
+    Footer info... {{time}}
+  </template>
+  <script>
+    (function () {
+
+      var date = new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());
+      Polymer({
+        // define element prototype here
+        time:  "time here"
+      });
+
+    })();
+  </script>
+</polymer-element>
