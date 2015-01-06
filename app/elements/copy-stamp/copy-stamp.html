@@ -1,17 +1,23 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="copy-stamp" attributes="">
+<polymer-element name="copy-stamp" attributes="date notice">
   <template>
     <link rel="stylesheet" href="copy-stamp.css">
-    Footer info... {{time}}
+   <small>
+     &copy; {{date}}, {{notice}}
+   </small>
   </template>
   <script>
     (function () {
+      var date = new Date().getFullYear();
 
-      var date = new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());
       Polymer({
-        // define element prototype here
-        time:  "time here"
+        notice: "Acme Inc",
+
+        ready : function() {
+          this.date = date;
+        }
+
       });
 
     })();
